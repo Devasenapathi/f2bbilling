@@ -2,7 +2,7 @@ import"./menubar.css";
 const MenuBar=()=>{
     return(
         <div class="menu-bar">
-    <div class="logo">MyApp</div>
+    <div class="logo">FARM2BAG</div>
     <div class="menu">
       <div class="menu-item">File</div>
       <div class="menu-item">Edit</div>

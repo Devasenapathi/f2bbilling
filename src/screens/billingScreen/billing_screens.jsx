@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./billing_screen.css";
 import { farmItems } from "../../service/b2c";
-import { getBill, getOfflineBill, setBill, setOfflineBill } from "../../utils/storage";
+import {
+  getBill,
+  getOfflineBill,
+  setBill,
+  setOfflineBill,
+} from "../../utils/storage";
 import { OrderSave } from "../../service/order_service";
 
 const BillingScreen = () => {
@@ -21,7 +26,6 @@ const BillingScreen = () => {
   const selectRef = useRef(null);
 
   useEffect(() => {
-    console.log(getBill(), "aaaaaaaaaaaaaaaaaaaaaaaaa");
     selectRef.current.focus();
     const data = {
       lat: 12.984879,
@@ -46,15 +50,13 @@ const BillingScreen = () => {
     };
   }, []);
 
-  useEffect(()=>{
-    if(isOnline){
-      if(getOfflineBill().length>0){
-        getOfflineBill().map((val,index)=>{
-
-        })
+  useEffect(() => {
+    if (isOnline) {
+      if (getOfflineBill().length > 0) {
+        getOfflineBill().map((val, index) => {});
       }
     }
-  },[isOnline])
+  }, [isOnline]);
 
   const handleProduct = (e) => {
     const selectedProductName = e.target.value;
@@ -211,16 +213,39 @@ const BillingScreen = () => {
           }
         })
         .catch((err) => console.log(err, "error"));
-    }else{
-      setOfflineBill([...getOfflineBill(),data])
-      console.log("offline data to soter in local storage")
+    } else {
+      setOfflineBill([...getOfflineBill(), data]);
+      console.log("offline data to soter in local storage");
     }
   };
-
+ 
   return (
     <div className={`billing ${isOnline ? "online" : "offline"}`}>
       <div className="head">
-        <h1>Grocery Billing Software</h1>
+        <div className="details">
+          <div>
+            <label htmlFor="customerName">Customer Name</label>
+            <input
+              type="text"
+              placeholder="Enter Name"
+              value={customerName}
+              name="customerName"
+              onChange={(e) => setCustomerName(e.target.value)}
+            />{" "}
+          </div>
+          <div>
+            <label htmlFor="mobile">Mobile Number</label>
+            <input
+              type="number"
+              placeholder="Enter Number"
+              minLength={10}
+              maxLength={10}
+              value={phoneNumber}
+              name="mobile"
+              onChange={(e) => setPhoneNUmber(e.target.value)}
+            />
+          </div>
+        </div>
         <div className="head-sub">
           <div
             className="internet"
@@ -235,30 +260,6 @@ const BillingScreen = () => {
         </div>
       </div>
 
-      <div className="details">
-        <div>
-          <label htmlFor="customerName">Customer Name</label>
-          <input
-            type="text"
-            placeholder="Enter Name"
-            value={customerName}
-            name="customerName"
-            onChange={(e) => setCustomerName(e.target.value)}
-          />{" "}
-        </div>
-        <div>
-          <label htmlFor="mobile">Mobile Number</label>
-          <input
-            type="number"
-            placeholder="Enter Number"
-            minLength={10}
-            maxLength={10}
-            value={phoneNumber}
-            name="mobile"
-            onChange={(e) => setPhoneNUmber(e.target.value)}
-          />
-        </div>
-      </div>
       <div>
         <h2>Add Product</h2>
         <div className="billing_content">
