@@ -18,6 +18,7 @@ const BillingScreen = () => {
     price: "",
     quantity: "",
     unitValue: "",
+    unit: 0,
   });
   const [billingList, setBillingList] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -34,7 +35,6 @@ const BillingScreen = () => {
     };
     farmItems(data).then((res) => {
       setProducts(res.data.result);
-      console.log(res.data.result);
     });
   }, []);
 
@@ -60,18 +60,18 @@ const BillingScreen = () => {
 
   const handleProduct = (e) => {
     const selectedProductName = e.target.value;
-    // const selectedProduct = products.find(
-    //   (product) => product.name === selectedProductName
-    // );
-    const unitValue = newProduct.name
-      ? products.find((product) => product.productName === newProduct.name)
-          .unitValue
-      : "";
+    const unitValue1 = products.find(
+      (product) => product.productName === e.target.value
+    ).unitValue;
+    const units = products.find(
+      (product) => product.productName === e.target.value
+    ).unit;
     setNewProduct({
       ...newProduct,
       name: selectedProductName,
       price: "",
-      unitValue: unitValue,
+      unitValue: unitValue1,
+      unit: units,
     });
   };
 
@@ -218,7 +218,7 @@ const BillingScreen = () => {
       console.log("offline data to soter in local storage");
     }
   };
- 
+
   return (
     <div className={`billing ${isOnline ? "online" : "offline"}`}>
       <div className="head">
@@ -299,7 +299,12 @@ const BillingScreen = () => {
                 step="0.25"
                 pattern="^\d+(?:\.\d{1,2})?$"
               />
-              {newProduct.name ? newProduct.unitValue : ""}
+              {newProduct.name && (
+                <p>
+                  {newProduct.unit}
+                  {newProduct.unitValue}
+                </p>
+              )}
             </div>
           </div>
           <div className="billing_main">
