@@ -1,16 +1,18 @@
-import './App.css';
-import Billing from './screens/billingScreen/billing_screens';
-import Farmproduct from './screens/farmProduct/farmProduct';
-import MenuBar from './screens/menuBar/menubar';
+import "./App.css";
+import BillScreen from "./screens/billing/billScreen";
+import Billing from "./screens/billing/billing";
+import AppTab from "./screens/demo";
+import Home from "./screens/home/home";
 
 function App() {
-  return(
-    <div>
-      <MenuBar/>
+  return (
+    <div className="app">
+      {/* <Home/> */}
       {/* <Billing/> */}
-      <Farmproduct/>
+      <BillScreen/>
+      {/* <AppTab/> */}
     </div>
-  )
+  );
 }
 
 export default App;

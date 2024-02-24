@@ -1,16 +1,79 @@
-.farmproduct{
-    width: 100vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+span{
+    color: rgb(90, 253, 90);
 }
-.farmproduct1{
-    height: 95%;
-    width: 90%;
-    background-color: #f5f5f5;
+.farmproduct {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.farmproduct1 {
+  height: 100%;
+  width: 99%;
+  background-color: #c0c0c0;
+  padding: 0.5%;
+  display: flex;
+  justify-content: space-between;
+}
+.farmproduct2 {
+  width: 20%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.farmproduct3 {
+  width: 79.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.farmproduct4 {
+  height: 30%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.farmproduct5{
+  height: 69%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.farmproduct2_sub1{
+    margin-top: 5%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+}
+.farmproduct2_sub3{
+    width: 90%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.farmproduct4-sub1{
+    width: 98%;
+}
+.farmproduct4-sub2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.farmproduct4-sub3{
+    display: flex;
+    align-items: center;
+}
+.farmproduct5-sub1{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

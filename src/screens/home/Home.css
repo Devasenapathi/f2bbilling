@@ -1,0 +1,24 @@
+.home {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 97vh;
+}
+.home0{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+}
+.home1 {
+    display: flex;
+    flex-direction: column;
+    flex: 0.15;
+    background-color: #12ad2b;
+    color: #fff;
+    align-items: center;
+}
+.home2 {
+  flex: 0.85;
+}

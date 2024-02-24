@@ -1,0 +1,80 @@
+.billing {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c0c0c0;
+  display: flex;
+  justify-content: space-between;
+}
+.billing1 {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.billing2 {
+  height: 100%;
+  width: 39.9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.billing1-sub1 {
+  height: 70%;
+  width: 100%;
+  background-color: #fff;
+}
+.billing1-sub2 {
+  height: 29.8%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.billing2-sub1 {
+  height: 60%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.billing2-sub2 {
+  height: 39.7%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.billing1-sub2 button {
+  background-color: rgb(185, 199, 255);
+  border: 1px solid blue;
+  margin: 0 5%;
+  padding: 5px 10px;
+}
+.billing2-sub3 {
+  width: 95%;
+}
+.billing-sub3-text {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.billing2-sub4 {
+  width: 95%;
+}
+.billing2-sub4-content {
+  display: flex;
+  justify-content: space-between;
+}
+.billing2-sub5 {
+  width: 95%;
+}
+.billing2-sub5-content{
+    display: flex;
+    justify-content: space-between;
+}
