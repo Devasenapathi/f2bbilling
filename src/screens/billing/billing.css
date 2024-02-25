@@ -78,3 +78,18 @@
     display: flex;
     justify-content: space-between;
 }
+.searchList{
+  z-index: 1000;
+  height: 20%;
+  overflow-y: scroll;
+}
+.tableBody{
+  width: 100%;
+  overflow-y: scroll;
+  font-size: 12px;
+}
+.billing-table{
+  height: 70%;
+  width: 100%;
+  overflow-y: scroll;
+}
