@@ -1,6 +1,9 @@
 import axios from "axios";
-import { CATEGORYAPI, FARMERAPI, PRODUCTSAPI, PRODUCTTYPEAPI, UNITAPI } from "../utils/api";
-import { BASE_AUTH, TOKEN } from "../utils/base_auth";
+import { ADDMULTIPLEFARMPRODUCTAPI, CATEGORYAPI, FARMERAPI, GETFARMPRODUCTBYIDAPI, PRODUCTSAPI, PRODUCTTYPEAPI, UNITAPI, UPDATEFARMPRODUCTAPI } from "../utils/api";
+import { BASE_AUTH } from "../utils/base_auth";
+import { getToken } from "../utils/storage";
+
+const TOKEN = getToken()
 
 export function farmItems(data) {
   return axios.post(PRODUCTSAPI, data, {
@@ -21,7 +24,7 @@ export function categoryService(data) {
 }
 
 export function productMasterService() {
-  return axios.get(CATEGORYAPI, {
+  return axios.get(PRODUCTTYPEAPI, {
     headers: {
       Authorization: BASE_AUTH,
       "Content-Type": "application/json",
@@ -34,7 +37,7 @@ export function productTypeService(){
         headers: {
           Authorization: BASE_AUTH,
           "Content-Type": "application/json",
-          Token:TOKEN
+          Token:getToken()
         },
       });
 }
@@ -44,7 +47,7 @@ export function unitMasterService() {
     headers: {
       Authorization: BASE_AUTH,
       "Content-Type": "application/json",
-      Token:TOKEN
+      Token:getToken()
     },
   });
 }
@@ -55,7 +58,37 @@ export function farmerMasterService() {
       headers: {
         Authorization: BASE_AUTH,
         "Content-Type": "application/json",
-        Token:TOKEN
+        Token:getToken()
       },
     });
   }
+
+export function updateFarmProductService(data){
+  return axios.patch(UPDATEFARMPRODUCTAPI,data,{
+    headers: {
+      Authorization: BASE_AUTH,
+      "Content-Type": "application/json",
+      Token:getToken()
+    },
+  })
+}
+
+export function addMultipleFarmProductService(data){
+  return axios.put(ADDMULTIPLEFARMPRODUCTAPI,data,{
+    headers: {
+      Authorization: BASE_AUTH,
+      "Content-Type": "application/json",
+      Token:getToken()
+    },
+  })
+}
+
+export function getFarmProductByIdService(data){
+    return axios.get(GETFARMPRODUCTBYIDAPI,{
+      headers: {
+        Authorization: BASE_AUTH,
+        "Content-Type": "application/json",
+        Token:getToken()
+      },
+    })
+}
