@@ -96,7 +96,7 @@ const AppTab = () => {
         <thead>
           <tr>
             <th></th>
-            <th>Image</th>
+            {/* <th>Image</th> */}
             <th>Product Name</th>
             <th>Actual Price</th>
             <th>Price</th>
@@ -112,11 +112,11 @@ const AppTab = () => {
           {products.map((product, index) => (
             <tr key={index}>
               <td><button style={{color:"red"}} onClick={{}}>-</button></td>
-              <td>{product.image?<img
+              {/* <td>{product.image?<img
                       src={product.image}
                       alt="img"
                       style={{ height: "50px", width: "50px" }}
-                    />:<input type="file" name="image" id="image" />}</td>
+                    />:<input type="file" name="image" id="image" />}</td> */}
               <td><input type="text" name="productName" value={product.productName} onChange={(e) => handleInputChange(index, e)} /></td>
               <td><input type="text" name="actualPrice" value={product.actualPrice} onChange={(e) => handleInputChange(index, e)} /></td>
               <td><input type="text" name="price" value={product.price} onChange={(e) => handleInputChange(index, e)} /></td>
