@@ -49,10 +49,11 @@ const AppTab = () => {
   };
 
   const handleSubmit = () => {
-    console.log(products.length,'llllllllllllll')
     var length = 0;
     if(selectedCategory){
       for(let data of products){
+        const index = products.findIndex((res) => res._id === data._id);
+        const updatedProducts = [...products];
         length =+1;
         const object ={
           "categoryName":selectedCategory,
@@ -67,10 +68,10 @@ const AppTab = () => {
           "farmerId":"645870d544c927042c61b387",
           "productTypeMasterId":productType.filter(res=>res.productType === data.productTypeMaster)[0]?._id
         }
+        console.log(data)
         addMultipleFarmProductService({...data,...object}).then((res)=>{
-          if(length === products.length){
-            setProducts(new Array(1).fill({}))
-          }
+          updatedProducts[index]['color'] = "lightgreen";
+          setProducts(updatedProducts);
         }).catch((err)=>{
           console.log(err,'error in instering multiple farmproduct')
         })
@@ -110,7 +111,7 @@ const AppTab = () => {
         </thead>
         <tbody>
           {products.map((product, index) => (
-            <tr key={index}>
+            <tr key={index} style={{backgroundColor:product.color&&"green"}}>
               <td><button style={{color:"red"}} onClick={{}}>-</button></td>
               {/* <td>{product.image?<img
                       src={product.image}
