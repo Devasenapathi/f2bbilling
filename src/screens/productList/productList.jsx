@@ -78,6 +78,10 @@ const ProductList = () => {
       });
   };
 
+  const handleChangeCategory=(e,val)=>{
+    console.log(e.target.value,val)
+  }
+
   const filterCategory = (e) => {
     setProductList(
       products.filter((res) => res.productCategoryId.categoryName === e)
@@ -157,6 +161,7 @@ const ProductList = () => {
             <th>Image</th>
             <th>Status</th>
             <th>Product Name</th>
+            <th>Product Category</th>
             <th>Actual Price</th>
             <th>Price</th>
             <th>Unit</th>
@@ -207,6 +212,12 @@ const ProductList = () => {
                       value={res.productName}
                       onChange={(e) => handleChange(e, res)}
                     />
+                  </td>
+                  <td>
+                  <select name="productCategoryId" id="productCategoryId" onChange={(e)=>handleChange(e,res)}>
+                    <option value="">{res.productCategoryId.categoryName}</option>
+                    {category.map((res)=>{return <option value={res._id}>{res.categoryName&&res.categoryName}</option>})}
+                  </select>
                   </td>
                   <td>
                     <input
